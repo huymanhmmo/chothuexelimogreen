@@ -31,7 +31,7 @@ echo sau do copy link (dang https://github.com/user/repo.git)
 echo va dan vao day.
 echo.
 set "repo="
-set /p repo="==> LINK CUA BAN: "
+set /p repo="https://github.com/huymanhmmo/chothuexelimogreen.git"
 
 if not defined repo (
     echo.
