@@ -1,7 +1,7 @@
 @echo off
 title GitHub Uploader - Limo Green
 echo ==========================================
-echo    BAT DAU DAY LANDING PAGE LEN GITHUB
+echo    KHOI TAO DU LIEU GIT
 echo ==========================================
 echo.
 
@@ -14,31 +14,55 @@ if %errorlevel% neq 0 (
     exit
 )
 
-:: Khoi tao va commit
+:: Khoi tao va commit (chi chay 1 lan)
 git init
 git add .
-git commit -m "Hoan thien Landing Page Limo Green - Standard SEO 2026"
+git commit -m "Hoan thien Landing Page Limo Green"
 git branch -M main
 
+:input_link
+cls
+echo ==========================================
+echo    NHAP LINK REPOSITORY CUA BAN
+echo ==========================================
 echo.
-set /p repo="==> NHAP LINK REPOSITORY CUA BAN (Gia su: https://github.com/user/repo.git): "
+echo Vui long vao GitHub, tao mot Repository moi, 
+echo sau do copy link (dang https://github.com/user/repo.git) 
+echo va dan vao day.
+echo.
+set "repo="
+set /p repo="==> LINK CUA BAN: "
+
+if not defined repo (
+    echo.
+    echo [CANH BAO] Ban chua nhap link! Nhan phim bat ky de thu lai.
+    pause
+    goto input_link
+)
 
 :: Them remote va push
+echo.
+echo Dang kiem tra ket noi...
 git remote remove origin >nul 2>&1
-git remote add origin %repo%
+git remote add origin "%repo%"
+
 echo.
 echo Dang day du lieu len GitHub...
 git push -u origin main --force
 
 if %errorlevel% equ 0 (
-    echo.
+    cls
     echo ==========================================
     echo    CHUC MUNG! DA TAI LEN THANH CONG
     echo ==========================================
+    echo.
+    echo Website cua ban se hoat dong sau vai phut.
 ) else (
     echo.
-    echo [LOI] Co loi xay ra trong qua trinh tai len. 
-    echo Hay dam bao link Repository chinh xac va ban da dang nhap GitHub.
+    echo [LOI] Co loi xay ra. Hay dam bao:
+    echo 1. Link Repository chinh xac.
+    echo 2. Ban da dang nhap GitHub trong trinh duyet/may tinh.
+    echo 3. Repository tren GitHub dang de o che do Public.
 )
 
 pause
