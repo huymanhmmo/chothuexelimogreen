@@ -1,0 +1,9 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Brain / App data
+.gemini/
+.brain/
+.system_generated/
+*.log
