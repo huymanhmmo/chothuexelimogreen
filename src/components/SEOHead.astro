@@ -1,0 +1,55 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  image?: string;
+  type?: string;
+  publishDate?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonical = Astro.url.href,
+  image = '/images/branding/share-image.png',
+  type = 'website',
+  publishDate,
+  noindex = false,
+} = Astro.props;
+
+const siteUrl = 'https://limogreen.chothuexe.vip';
+const fullImage = image.startsWith('http') ? image : `${siteUrl}${image}`;
+---
+
+<!-- Primary Meta -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+<link rel="icon" href="/images/branding/limo_green_final.png" type="image/png" />
+{noindex ? <meta name="robots" content="noindex, nofollow" /> : <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />}
+
+<!-- Open Graph -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={canonical} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={fullImage} />
+<meta property="og:locale" content="vi_VN" />
+<meta property="og:site_name" content="Limo Green - Cho thuê xe VinFast" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={fullImage} />
+
+{publishDate && <meta property="article:published_time" content={publishDate} />}
+
+<!-- Google Fonts Preconnect + Load -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />

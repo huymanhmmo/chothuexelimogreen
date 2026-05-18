@@ -1,0 +1,161 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Liên Hệ Thuê Xe VinFast Limo Green 7 Chỗ – Đăng Ký Nhanh"
+  description="Đăng ký thuê xe VinFast Limo Green 7 chỗ dài hạn. Phản hồi trong 5 phút qua Zalo. Gọi ngay 0979.121.097."
+  currentPath="/lien-he/"
+>
+  <Fragment slot="head">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </Fragment>
+
+  <main class="pt-24">
+    <div class="max-w-6xl mx-auto px-4 py-4">
+      <nav class="text-sm text-gray-500"><a href="/" class="hover:text-primary">Trang Chủ</a> <span class="mx-2">/</span> <span class="text-dark font-semibold">Liên Hệ</span></nav>
+    </div>
+
+    <section class="py-12 px-4">
+      <div class="max-w-6xl mx-auto">
+        <div data-aos="fade-up" class="text-center mb-12">
+          <span class="text-primary font-semibold text-sm uppercase tracking-widest">Liên Hệ Ngay</span>
+          <h1 class="text-3xl md:text-5xl font-black text-dark mt-3">Đăng Ký Thuê Xe</h1>
+          <p class="text-gray-500 mt-4">Phản hồi trong vòng 5 phút qua Zalo</p>
+        </div>
+
+        <div class="grid lg:grid-cols-5 gap-8">
+          <!-- Contact info -->
+          <div class="lg:col-span-2 space-y-5" data-aos="fade-right">
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+              <div class="flex items-center gap-4 mb-4">
+                <div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
+                  <svg width="22" height="22" fill="white" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+                </div>
+                <div>
+                  <div class="text-xs text-gray-500 font-medium">Gọi điện</div>
+                  <a href="tel:0979121097" class="text-xl font-black text-dark hover:text-primary transition-colors">0979.121.097</a>
+                </div>
+              </div>
+              <a href="tel:0979121097" class="block w-full bg-primary hover:bg-primary-dark text-white font-bold text-center py-3 rounded-xl transition-all">📞 Gọi Ngay</a>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+              <div class="flex items-center gap-4 mb-4">
+                <div class="w-12 h-12 bg-zalo rounded-xl flex items-center justify-center">
+                  <svg width="22" height="22" viewBox="0 0 40 40" fill="white"><path d="M20 0C9 0 0 8.95 0 20c0 4.25 1.35 8.2 3.65 11.45L1.2 38.6a1 1 0 001.25 1.2l7.4-2.5C12.8 38.7 16.3 40 20 40c11.05 0 20-8.95 20-20S31.05 0 20 0z"/></svg>
+                </div>
+                <div>
+                  <div class="text-xs text-gray-500 font-medium">Zalo</div>
+                  <div class="text-xl font-black text-dark">0979.121.097</div>
+                </div>
+              </div>
+              <a href="https://zalo.me/0979121097" target="_blank" rel="noopener" class="block w-full bg-zalo hover:opacity-90 text-white font-bold text-center py-3 rounded-xl transition-all">💬 Nhắn Zalo</a>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+              <div class="text-sm font-bold text-dark mb-3">📍 Khu vực hoạt động</div>
+              <div class="text-gray-600 text-sm space-y-1">
+                <div>✓ Hà Nội & vùng lân cận</div>
+                <div>✓ Hải Phòng, Quảng Ninh</div>
+                <div>✓ Các tuyến liên tỉnh phía Bắc</div>
+              </div>
+              <div class="mt-3 text-xs text-gray-400">Liên hệ để xác nhận khu vực cụ thể</div>
+            </div>
+          </div>
+
+          <!-- Form -->
+          <div class="lg:col-span-3" data-aos="fade-left">
+            <div class="bg-white rounded-2xl p-7 shadow-sm border border-gray-100">
+              <h2 class="font-bold text-dark text-lg mb-5">Điền thông tin, chúng tôi liên hệ lại ngay</h2>
+
+              <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" title="form-submit"></iframe>
+              <form id="contactForm" action="https://docs.google.com/forms/d/e/1FAIpQLScO2v0bJVu4AGyLfXR-ftIB6jcQ_tpYwj2jo_V2PccmVzPtBw/formResponse" method="POST" target="hidden_iframe">
+                <div class="grid sm:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1.5">Họ và tên *</label>
+                    <input type="text" name="entry.972743390" required placeholder="Nguyễn Văn A" class="form-input" />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1.5">Số điện thoại *</label>
+                    <input type="tel" name="entry.473353679" required placeholder="09xx.xxx.xxx" class="form-input" />
+                  </div>
+                </div>
+                <div class="mb-4">
+                  <label class="block text-sm font-semibold text-gray-700 mb-1.5">Email (Không bắt buộc)</label>
+                  <input type="email" name="entry.1358962529" id="emailField" placeholder="abc@gmail.com" class="form-input" />
+                </div>
+                <div class="grid sm:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1.5">Dự kiến bắt đầu</label>
+                    <input type="date" name="entry.829499582" class="form-input" />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1.5">Thời hạn hợp đồng</label>
+                    <input type="text" name="entry.916584695" placeholder="VD: 3 năm / 5 năm" class="form-input" />
+                  </div>
+                </div>
+                <div class="mb-5">
+                  <label class="block text-sm font-semibold text-gray-700 mb-1.5">Ghi chú / Mục đích sử dụng</label>
+                  <textarea name="entry.964450740" rows="3" placeholder="VD: Tôi muốn dùng xe để đưa đón học sinh tại quận Đống Đa..." class="form-input resize-none"></textarea>
+                </div>
+                <button type="submit" id="submitBtn" class="w-full bg-primary hover:bg-primary-dark text-white font-black text-base py-4 rounded-xl transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/30 flex items-center justify-center gap-2">
+                  <span id="btnText">Gửi Đăng Ký Ngay →</span>
+                  <span id="btnSpinner" class="hidden"><svg class="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path></svg></span>
+                </button>
+                <p class="text-xs text-gray-400 text-center mt-3">Thông tin của bạn được bảo mật. Chúng tôi sẽ liên hệ trong 5-10 phút.</p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Toast -->
+  <div id="toast" class="fixed bottom-24 right-4 z-50 bg-primary text-white rounded-2xl px-5 py-4 shadow-xl max-w-xs">
+    <div class="font-bold text-sm mb-0.5">✅ Đã gửi thành công!</div>
+    <div class="text-xs text-white/80">Chúng tôi sẽ liên hệ Zalo/điện thoại trong 5 phút.</div>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" is:inline></script>
+  <script is:inline>
+    AOS.init({ duration: 700, once: true, easing: 'ease-out-cubic' });
+
+    let formSubmitted = false;
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', function(e) {
+      const btn = document.getElementById('submitBtn');
+      const btnText = document.getElementById('btnText');
+      const spinner = document.getElementById('btnSpinner');
+      const emailInput = document.getElementById('emailField');
+      if (!emailInput.value) emailInput.value = 'khach-lien-he-zalo@gmail.com';
+      btnText.textContent = 'Đang gửi thông tin...';
+      spinner.classList.remove('hidden');
+      btn.disabled = true;
+      btn.style.opacity = '0.7';
+      formSubmitted = true;
+    });
+
+    document.getElementById('hidden_iframe').onload = function () {
+      if (formSubmitted) {
+        const toast = document.getElementById('toast');
+        const btnText = document.getElementById('btnText');
+        const spinner = document.getElementById('btnSpinner');
+        const btn = document.getElementById('submitBtn');
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2500);
+        btnText.textContent = '✅ Gửi thành công!';
+        spinner.classList.add('hidden');
+        btn.style.opacity = '1';
+        form.reset();
+        setTimeout(() => {
+          btnText.textContent = 'Gửi Đăng Ký Ngay →';
+          btn.disabled = false;
+          window.location.href = 'https://zalo.me/0979121097';
+        }, 2000);
+        formSubmitted = false;
+      }
+    };
+  </script>
+</BaseLayout>

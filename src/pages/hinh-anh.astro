@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Hình Ảnh Thực Tế Xe VinFast Limo Green Màu Bạc Cho Thuê"
+  description="Xem hình ảnh thực tế xe VinFast Limo Green màu bạc 7 chỗ cho thuê tự lái tại Hà Nội. Ngoại thất sang trọng, nội thất rộng rãi."
+  currentPath="/hinh-anh/"
+>
+  <Fragment slot="head">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  </Fragment>
+
+  <main class="pt-24">
+    <div class="max-w-6xl mx-auto px-4 py-4">
+      <nav class="text-sm text-gray-500"><a href="/" class="hover:text-primary">Trang Chủ</a> <span class="mx-2">/</span> <span class="text-dark font-semibold">Hình Ảnh</span></nav>
+    </div>
+
+    <section class="px-4 pb-12">
+      <div class="max-w-6xl mx-auto text-center" data-aos="fade-up">
+        <span class="text-primary font-semibold text-sm uppercase tracking-widest">Hình Ảnh Xe</span>
+        <h1 class="text-3xl md:text-5xl font-black text-dark mt-3">VinFast Limo Green · Màu Bạc</h1>
+        <p class="text-gray-500 mt-4">Xe mới 100% · Đăng ký 2026 · Sạch sẽ · Sang trọng</p>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="py-8 px-4 bg-gray-50">
+      <div class="max-w-7xl mx-auto">
+        <div class="swiper gallery-main rounded-3xl overflow-hidden mb-6 aspect-video" data-aos="fade-up">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide relative">
+              <img src="/images/gallery/silver-1.jpg" class="w-full h-full object-cover" alt="Thuê xe tự lái VinFast Limo Green màu bạc sang trọng" />
+              <div class="absolute bottom-4 left-4 bg-black/60 text-white text-xs px-3 py-1 rounded-full">Ngoại thất · Sang trọng</div>
+            </div>
+            <div class="swiper-slide relative">
+              <img src="/images/gallery/silver-side.jpg" class="w-full h-full object-cover" alt="Thuê xe 7 chỗ tự lái VinFast Limo Green màu bạc thực tế" />
+              <div class="absolute bottom-4 left-4 bg-black/60 text-white text-xs px-3 py-1 rounded-full">Ngoại thất · Màu Bạc</div>
+            </div>
+            <div class="swiper-slide relative">
+              <img src="/images/gallery/interior-passenger.jpg" class="w-full h-full object-cover" alt="Nội thất thuê xe điện tự lái VinFast Limo Green khoang hành khách" />
+              <div class="absolute bottom-4 left-4 bg-black/60 text-white text-xs px-3 py-1 rounded-full">Nội thất · Khoang hành khách cực rộng</div>
+            </div>
+            <div class="swiper-slide relative">
+              <img src="/images/gallery/interior-cockpit.jpg" class="w-full h-full object-cover" alt="Khoang lái hiện đại khi thuê VinFast Limo Green" />
+              <div class="absolute bottom-4 left-4 bg-black/60 text-white text-xs px-3 py-1 rounded-full">Nội thất · Khoang lái hiện đại</div>
+            </div>
+            <div class="swiper-slide relative">
+              <img src="/images/gallery/yellow-exterior.jpg" class="w-full h-full object-cover" alt="Xe VinFast Limo Green màu vàng cho thuê tự lái" />
+              <div class="absolute bottom-4 left-4 bg-black/60 text-white text-xs px-3 py-1 rounded-full">Ngoại thất · Màu Vàng</div>
+            </div>
+            <div class="swiper-slide relative">
+              <img src="/images/gallery/red-exterior.jpg" class="w-full h-full object-cover" alt="Thuê xe điện tự lái VinFast Limo Green màu đỏ" />
+              <div class="absolute bottom-4 left-4 bg-black/60 text-white text-xs px-3 py-1 rounded-full">Ngoại thất · Màu Đỏ</div>
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+
+        <!-- Thumbnails -->
+        <div class="swiper gallery-thumbs" data-aos="fade-up">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="/images/gallery/silver-1.jpg" alt="Ngoại thất bạc" /></div>
+            <div class="swiper-slide"><img src="/images/gallery/silver-side.jpg" alt="Ngoại thất hông" /></div>
+            <div class="swiper-slide"><img src="/images/gallery/interior-passenger.jpg" alt="Khoang hành khách" /></div>
+            <div class="swiper-slide"><img src="/images/gallery/interior-cockpit.jpg" alt="Khoang lái" /></div>
+            <div class="swiper-slide"><img src="/images/gallery/yellow-exterior.jpg" alt="Ngoại thất vàng" /></div>
+            <div class="swiper-slide"><img src="/images/gallery/red-exterior.jpg" alt="Ngoại thất đỏ" /></div>
+          </div>
+        </div>
+
+        <!-- Specs grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10" data-aos="fade-up">
+          <div class="text-center p-4 bg-white rounded-2xl"><div class="text-3xl font-black text-primary">7</div><div class="text-sm text-gray-600 mt-1">Chỗ ngồi</div></div>
+          <div class="text-center p-4 bg-white rounded-2xl"><div class="text-3xl font-black text-primary">450km</div><div class="text-sm text-gray-600 mt-1">Mỗi lần sạc</div></div>
+          <div class="text-center p-4 bg-white rounded-2xl"><div class="text-3xl font-black text-primary">607L</div><div class="text-sm text-gray-600 mt-1">Cốp xe (gập hàng 3)</div></div>
+          <div class="text-center p-4 bg-white rounded-2xl"><div class="text-3xl font-black text-primary">30'</div><div class="text-sm text-gray-600 mt-1">Sạc nhanh 10→70%</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 px-4 bg-white">
+      <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+        <h2 class="text-2xl font-black text-dark mb-4">Muốn xem xe thực tế?</h2>
+        <p class="text-gray-500 mb-8">Liên hệ để hẹn lịch xem xe trực tiếp tại Hà Nội</p>
+        <a href="/lien-he/" class="bg-primary hover:bg-primary-dark text-white font-bold px-8 py-4 rounded-xl transition-colors">Đặt Lịch Xem Xe →</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" is:inline></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" is:inline></script>
+  <script is:inline>
+    AOS.init({ duration: 700, once: true, easing: 'ease-out-cubic' });
+    const galleryThumbs = new Swiper('.gallery-thumbs', { spaceBetween: 10, slidesPerView: 4, freeMode: true, watchSlidesProgress: true, breakpoints: { 640: { slidesPerView: 5 }, 1024: { slidesPerView: 6 } } });
+    new Swiper('.gallery-main', { spaceBetween: 10, navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }, thumbs: { swiper: galleryThumbs } });
+  </script>
+</BaseLayout>

@@ -1,0 +1,87 @@
+---
+export interface Props {
+  currentPath?: string;
+}
+const { currentPath = '' } = Astro.props;
+
+const navLinks = [
+  { href: '/', label: 'Trang Chủ' },
+  { href: '/thong-so-ky-thuat/', label: 'Thông Số' },
+  { href: '/bang-gia/', label: 'Giá Thuê' },
+  { href: '/hinh-anh/', label: 'Hình Ảnh' },
+  { href: '/blog/', label: 'Blog' },
+  { href: '/lien-he/', label: 'Liên Hệ' },
+];
+---
+
+<header id="mainHeader" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3 px-4 md:px-8 bg-dark/80 backdrop-blur-md">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2">
+      <div class="w-11 h-11 flex items-center justify-center">
+        <img src="/images/branding/limo_green_final.png" alt="Limo Green Logo" class="w-full h-full logo-clip" />
+      </div>
+      <div class="text-white font-bold text-base leading-tight">
+        <span class="text-primary tracking-wider uppercase text-sm">Limo Green</span><br />
+        <span class="text-[10px] font-normal opacity-70 tracking-[0.2em] uppercase">Hà Nội</span>
+      </div>
+    </a>
+
+    <!-- Nav desktop -->
+    <nav class="hidden lg:flex items-center gap-1 text-sm">
+      {navLinks.map(link => (
+        <a href={link.href}
+          class={`px-3 py-2 rounded-lg transition-colors ${currentPath === link.href ? 'text-primary bg-primary/10 font-semibold' : 'text-white/80 hover:text-primary hover:bg-white/5'}`}>
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+    <!-- CTA -->
+    <div class="flex items-center gap-2">
+      <a href="tel:0979121097" class="hidden sm:flex items-center gap-1.5 bg-primary hover:bg-primary-dark text-white font-semibold text-sm px-4 py-2 rounded-full transition-colors">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        0979.121.097
+      </a>
+      <a href="https://zalo.me/0979121097" target="_blank" rel="noopener"
+        class="flex items-center gap-1.5 bg-zalo hover:opacity-90 text-white font-semibold text-sm px-4 py-2 rounded-full transition-opacity">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.101 0 11.391C0 14.887 1.708 17.962 4.408 19.982L3.541 23.511C3.472 23.791 3.738 24.032 4.008 23.916L8.463 22.022C9.579 22.38 10.762 22.583 12 22.583C18.628 22.583 24 17.482 24 11.192C24 4.902 18.628 0 12 0ZM18.3 16.485H9.72L15.345 10.335C15.48 10.185 15.39 9.93 15.195 9.93H9.45V8.625H17.805L12.33 14.775C12.195 14.925 12.285 15.18 12.48 15.18H18.3V16.485Z"/></svg>
+        Zalo
+      </a>
+
+      <!-- Mobile menu button -->
+      <button id="mobileMenuBtn" class="lg:hidden text-white p-2" aria-label="Menu" aria-expanded="false">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="hidden lg:hidden mt-3 pb-3 border-t border-white/10">
+    <nav class="flex flex-col gap-1 pt-3">
+      {navLinks.map(link => (
+        <a href={link.href}
+          class={`px-4 py-2.5 rounded-lg text-sm ${currentPath === link.href ? 'text-primary bg-primary/10 font-semibold' : 'text-white/80 hover:text-primary hover:bg-white/5'}`}>
+          {link.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Sticky header
+  const header = document.getElementById('mainHeader');
+  window.addEventListener('scroll', () => {
+    header?.classList.toggle('header-scrolled', window.scrollY > 60);
+  });
+
+  // Mobile menu
+  const btn = document.getElementById('mobileMenuBtn');
+  const menu = document.getElementById('mobileMenu');
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+    const expanded = btn?.getAttribute('aria-expanded') === 'true';
+    btn?.setAttribute('aria-expanded', String(!expanded));
+  });
+</script>

@@ -1,0 +1,1153 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => new Date(b.data.publishDate).valueOf() - new Date(a.data.publishDate).valueOf()
+).slice(0, 3);
+---
+
+<BaseLayout
+  title="Cho Thuê Xe Tự Lái VinFast Limo Green Hà Nội – Hợp Đồng Dài Hạn 3-5 Năm"
+  description="Dịch vụ cho thuê xe VinFast Limo Green 7 chỗ tự lái tại Hà Nội. Thuê xe điện tự lái tiết kiệm 100% chi phí xăng dầu, hợp đồng dài hạn giá tốt nhất."
+  currentPath="/"
+>
+  <Fragment slot="head">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <!-- Schema: Service -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org", "@type": "Service",
+      "serviceType": "Thuê xe 7 chỗ tự lái VinFast Limo Green",
+      "provider": { "@type": "LocalBusiness", "name": "VinFast Limo Green Hà Nội" },
+      "areaServed": { "@type": "State", "name": "Hà Nội" },
+      "hasOfferCatalog": { "@type": "OfferCatalog", "name": "Dịch vụ thuê xe điện tự lái",
+        "itemListElement": [{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Thuê xe VinFast Limo Green tự lái" }, "price": "21600000", "priceCurrency": "VND" }]
+      }
+    })} />
+
+    <!-- Schema: LocalBusiness -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org", "@type": "LocalBusiness",
+      "name": "VinFast Limo Green Hà Nội",
+      "image": "https://limogreen.chothuexe.vip/images/branding/limo_green_final.png",
+      "@id": "https://limogreen.chothuexe.vip", "url": "https://limogreen.chothuexe.vip",
+      "telephone": "+84979121097",
+      "address": { "@type": "PostalAddress", "streetAddress": "Hà Nội", "addressLocality": "Hà Nội", "postalCode": "100000", "addressCountry": "VN" },
+      "geo": { "@type": "GeoCoordinates", "latitude": 21.028511, "longitude": 105.804817 },
+      "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "06:00", "closes": "22:00" },
+      "sameAs": ["https://zalo.me/0979121097"]
+    })} />
+
+    <!-- Schema: FAQPage -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org", "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Chi phí bảo trì, bảo dưỡng định kỳ ai chịu trách nhiệm?", "acceptedAnswer": { "@type": "Answer", "text": "Xe được bảo dưỡng định kỳ theo tiêu chuẩn hãng. Người thuê có trách nhiệm bắt buộc đưa xe đi bảo dưỡng đúng lịch của VinFast (mỗi 5.000km hoặc 6 tháng)." }},
+        { "@type": "Question", "name": "Nếu xe bị hỏng hóc hoặc gặp sự cố kỹ thuật thì xử lý thế nào?", "acceptedAnswer": { "@type": "Answer", "text": "Các lỗi kỹ thuật nằm trong danh mục bảo hành của VinFast sẽ được hãng xử lý miễn phí. Các hư hại do cách vận hành sai người thuê hoàn toàn chịu trách nhiệm chi phí sửa chữa." }},
+        { "@type": "Question", "name": "Mỗi tháng tôi được chạy tối đa bao nhiêu km?", "acceptedAnswer": { "@type": "Answer", "text": "Định mức 3,500km/tháng. Nếu chạy vượt định mức, phí phụ trội là 3.000đ/km." }},
+        { "@type": "Question", "name": "Tôi có được cho người khác mượn hoặc thuê lại xe không?", "acceptedAnswer": { "@type": "Answer", "text": "Tuyệt đối KHÔNG. Hợp đồng chỉ ký cho người thuê trực tiếp sử dụng." }}
+      ]
+    })} />
+
+    <!-- Schema: BreadcrumbList -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org", "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Trang Chủ", "item": "https://limogreen.chothuexe.vip/" },
+        { "@type": "ListItem", "position": 2, "name": "Kinh Doanh Xe Điện", "item": "https://limogreen.chothuexe.vip/#mo-hinh-kinh-doanh" },
+        { "@type": "ListItem", "position": 3, "name": "Giá Thuê Xe", "item": "https://limogreen.chothuexe.vip/#gia-thue" },
+        { "@type": "ListItem", "position": 4, "name": "Đăng Ký Thuê Xe", "item": "https://limogreen.chothuexe.vip/#lien-he" }
+      ]
+    })} />
+
+    <style>
+      .cost-bar { background: linear-gradient(90deg, #ef4444, #dc2626); }
+      .savings-bar { background: linear-gradient(90deg, #00A859, #00D46A); }
+    </style>
+  </Fragment>
+
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" title="form-submit"></iframe>
+
+  <section class="hero-bg" id="trang-chu">
+    <!-- Background Image Slider (absolute, fills entire section) -->
+    <div class="swiper hero-swiper absolute inset-0 w-full h-full z-0">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="/images/hero/hero-1.jpg" class="w-full h-full object-cover"
+            alt="Thuê xe tự lái VinFast Limo Green Hà Nội - Xe 7 chỗ hiện đại" loading="eager">
+        </div>
+        <div class="swiper-slide">
+          <img src="/images/hero/hero-2.jpg" class="w-full h-full object-cover"
+            alt="Thuê xe 7 chỗ tự lái VinFast Limo Green - Xe điện tiết kiệm" loading="lazy">
+        </div>
+        <div class="swiper-slide">
+          <img src="/images/hero/hero-3.jpg" class="w-full h-full object-cover"
+            alt="Thuê xe điện tự lái VinFast Limo Green - Giải pháp vận tải xanh" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <!-- Dark overlay for text readability -->
+    <div class="hero-overlay"></div>
+
+    <!-- Content Layer (overlays on top of the slider) -->
+    <div class="relative z-10 flex items-center min-h-screen w-full">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-24 sm:py-32 md:py-40 w-full">
+        <div class="max-w-2xl lg:max-w-3xl" data-aos="fade-up">
+
+          <!-- Badge row -->
+          <div class="flex flex-wrap gap-2 mb-5 sm:mb-6">
+            <span class="bg-primary/20 border border-primary/50 text-green-300 text-xs font-semibold px-3 py-1 rounded-full">⚡ Xe Điện 7 Chỗ</span>
+            <span class="bg-gold/20 border border-gold/50 text-yellow-300 text-xs font-semibold px-3 py-1 rounded-full">⛽ Chi Phí Xăng Dầu: 0đ</span>
+            <span class="bg-white/10 border border-white/30 text-white/80 text-xs font-semibold px-3 py-1 rounded-full">📋 Hợp Đồng 3-5 Năm</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-4">
+            Cho Thuê Xe Tự Lái<br>
+            <span class="text-gradient">VinFast Limo Green</span><br>
+            <span class="text-white">Kiếm Tiền Mỗi Ngày</span>
+          </h1>
+
+          <p class="text-white/80 text-base sm:text-lg md:text-xl mb-2 font-medium">
+            Xe điện 7 chỗ VinFast Limo Green · Biển trắng · Hà Nội
+          </p>
+          <p class="text-white/60 text-sm sm:text-base mb-6">
+            Chủ động kinh doanh vận tải · Không qua app · Không mất hoa hồng · Ổn định lâu dài
+          </p>
+
+          <!-- ZERO FUEL + Price highlight - stack on mobile, inline on desktop -->
+          <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
+            <div class="bg-gradient-to-r from-amber-500/20 to-yellow-400/10 border-2 border-yellow-400/60 rounded-2xl p-4 sm:p-5">
+              <div class="flex items-center gap-3">
+                <div class="text-3xl sm:text-4xl">⛽</div>
+                <div>
+                  <div class="text-yellow-300 font-black text-lg sm:text-xl leading-tight">Chi phí nhiên liệu: <span class="text-white text-2xl sm:text-3xl">0đ</span></div>
+                  <div class="text-yellow-200/80 text-xs sm:text-sm mt-0.5">Sạc điện miễn phí đến hết 30/06/2027</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4 sm:p-5">
+              <div class="flex items-baseline gap-2">
+                <span class="text-4xl sm:text-5xl font-black text-white">24</span>
+                <span class="text-xl sm:text-2xl font-bold text-white">triệu</span>
+                <span class="text-white/60 text-base sm:text-lg">/tháng</span>
+              </div>
+              <div class="text-green-300 text-xs sm:text-sm mt-1 font-medium">Tất cả chi phí vận hành</div>
+            </div>
+          </div>
+
+          <!-- CTA buttons -->
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="#lien-he"
+              class="bg-primary hover:bg-primary-dark text-white font-bold text-base px-7 py-3.5 rounded-xl transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/40 text-center">
+              Liên Hệ Thuê Xe →
+            </a>
+            <a href="#mo-hinh-kinh-doanh"
+              class="bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold text-base px-7 py-3.5 rounded-xl transition-all text-center">
+              Xem Cách Kiếm Tiền ↓
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 text-white/50 text-xs text-center animate-bounce z-20">
+      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" class="mx-auto">
+        <path d="M7 10l5 5 5-5" />
+      </svg>
+    </div>
+  </section>
+  <section class="bg-dark py-12 px-4 shadow-inner">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="text-center" data-aos="fade-up" data-aos-delay="0">
+          <div class="text-primary text-3xl mb-2">⚡</div>
+          <div class="text-white font-black text-2xl">150 kW</div>
+          <div class="text-gray-500 text-xs uppercase tracking-widest">Công Suất Cực Đại</div>
+        </div>
+        <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="text-primary text-3xl mb-2">🌀</div>
+          <div class="text-white font-black text-2xl">400 Nm</div>
+          <div class="text-gray-500 text-xs uppercase tracking-widest">Mô-men Xoắn</div>
+        </div>
+        <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-primary text-3xl mb-2">🔋</div>
+          <div class="text-white font-black text-2xl">450 km</div>
+          <div class="text-gray-500 text-xs uppercase tracking-widest">Quãng Đường / Sạc</div>
+        </div>
+        <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+          <div class="text-primary text-3xl mb-2">📏</div>
+          <div class="text-white font-black text-2xl">2.767 mm</div>
+          <div class="text-gray-500 text-xs uppercase tracking-widest">Chiều Dài Cơ Sở</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 py-6 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row items-center justify-center gap-4 text-center md:text-left mb-3">
+        <div class="text-4xl">⛽</div>
+        <div>
+          <div class="font-black text-gray-900 text-xl md:text-2xl">CHI PHÍ NHIÊN LIỆU BẰNG 0 KHI KINH DOANH BẰNG XE
+            ĐIỆN</div>
+          <div class="font-semibold text-gray-800 text-sm mt-1">Sạc điện hoàn toàn miễn phí tại 2,221+ trạm V-Green toàn
+            quốc — đến hết <strong>30/06/2027</strong></div>
+        </div>
+        <div
+          class="bg-gray-900 text-yellow-400 font-black text-sm px-5 py-2 rounded-full whitespace-nowrap flex-shrink-0">
+          Tiết kiệm 7-8tr/tháng ⚡
+        </div>
+      </div>
+      <div class="grid grid-cols-3 gap-3 max-w-xl mx-auto mt-2">
+        <div class="bg-black/20 rounded-xl py-2 text-center">
+          <div class="font-black text-gray-900 text-lg">0đ</div>
+          <div class="text-gray-800 text-xs">Tiền xăng/tháng</div>
+        </div>
+        <div class="bg-black/20 rounded-xl py-2 text-center">
+          <div class="font-black text-gray-900 text-lg">2,221+</div>
+          <div class="text-gray-800 text-xs">Trạm sạc V-Green</div>
+        </div>
+        <div class="bg-black/20 rounded-xl py-2 text-center">
+          <div class="font-black text-gray-900 text-lg">450km</div>
+          <div class="text-gray-800 text-xs">Mỗi lần sạc</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-16 px-4 bg-white" id="so-sanh-chi-phi">
+    <div class="max-w-6xl mx-auto">
+      <div data-aos="fade-up" class="text-center mb-12">
+        <span class="text-primary font-semibold text-sm uppercase tracking-widest">Phân Tích Kinh Tế</span>
+        <h2 class="text-3xl md:text-4xl font-black text-dark mt-2">Lợi Thế Tài Chính Từ Xe Điện</h2>
+      </div>
+
+      <div class="overflow-x-auto" data-aos="fade-up">
+        <table class="w-full border-collapse bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100">
+          <thead>
+            <tr class="bg-gray-50 text-dark text-sm uppercase">
+              <th class="p-6 text-left border-b border-gray-100">Hạng Mục So Sánh</th>
+              <th class="p-6 text-center border-b border-gray-100 bg-red-50/30">Xe Xăng (Innova/7 chỗ)</th>
+              <th class="p-6 text-center border-b border-gray-100 bg-primary/5 text-primary">Limo Green (Xe Điện)</th>
+            </tr>
+          </thead>
+          <tbody class="text-sm text-gray-700">
+            <tr>
+              <td class="p-6 border-b border-gray-50 font-bold">Nhiên liệu (~3.000km/tháng)</td>
+              <td class="p-6 border-b border-gray-50 text-center text-red-500">~6.500.000đ - 7.500.000đ</td>
+              <td class="p-6 border-b border-gray-50 text-center text-primary font-bold">0đ (Đến 30/06/2027)</td>
+            </tr>
+            <tr>
+              <td class="p-6 border-b border-gray-50 font-bold">Bảo trì & Bảo dưỡng</td>
+              <td class="p-6 border-b border-gray-50 text-center">~1.500.000đ/tháng</td>
+              <td class="p-6 border-b border-gray-50 text-center font-bold text-primary">Tối thiểu (Rẻ hơn 70%)</td>
+            </tr>
+            <tr>
+              <td class="p-6 border-b border-gray-50 font-bold">Vận hành thực tế</td>
+              <td class="p-6 border-b border-gray-50 text-center">Ổn định truyền thống</td>
+              <td class="p-6 border-b border-gray-50 text-center">Êm ái, Không mùi, VIP</td>
+            </tr>
+            <tr>
+              <td class="p-6 border-b border-gray-50 font-bold">Hình ảnh thương hiệu</td>
+              <td class="p-6 border-b border-gray-50 text-center">Phổ thông</td>
+              <td class="p-6 border-b border-gray-50 text-center font-bold text-primary">Đối tác Xanh (ESG Standard)
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr class="bg-dark text-white">
+              <td class="p-6 font-black text-lg text-primary">LỢI NHUẬN GIA TĂNG</td>
+              <td class="p-6 text-center opacity-50 text-xs">Cơ bản</td>
+              <td class="p-6 text-center text-lg font-black text-primary">⚡ Thêm ~8.000.000đ/tháng</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <!-- Savings callout -->
+      <div
+        class="mt-10 bg-gradient-to-r from-primary to-primary-dark rounded-3xl p-8 text-white shadow-xl shadow-primary/20"
+        data-aos="fade-up">
+        <div class="flex flex-col md:flex-row items-center gap-8">
+          <div class="flex-1">
+            <h3 class="text-2xl font-black mb-2">Tiết Kiệm Lên Đến 100 Triệu/Năm</h3>
+            <p class="text-white/80 text-sm">Với xe điện, bạn chuyển toàn bộ chi phí xăng dầu thành lợi nhuận ròng. Đây
+              là giải pháp tối ưu cho doanh nhân vận tải năm 2026.</p>
+          </div>
+          <div class="flex gap-4">
+            <div class="bg-white/10 px-6 py-4 rounded-2xl text-center border border-white/20">
+              <div class="text-2xl font-black text-yellow-300">420Tr+</div>
+              <div class="text-[10px] uppercase opacity-70">5 Năm Hợp Đồng</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-20 px-4 bg-gray-50 overflow-hidden" id="doanh-nghiep">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div data-aos="fade-right">
+          <span class="text-primary font-bold text-xs uppercase tracking-widest">Tiêu Chuẩn B2B</span>
+          <h2 class="text-3xl md:text-5xl font-black text-dark mt-4 mb-6 leading-tight">Đối Tác Vận Tải Xanh<br>Cho
+            Doanh Nghiệp</h2>
+          <p class="text-gray-600 mb-8 text-lg">
+            Limo Green không chỉ là một chiếc xe, đó là chìa khóa để doanh nghiệp của bạn đạt được tiêu chuẩn ESG (Môi
+            trường - Xã hội - Quản trị) và tạo ấn tượng mạnh mẽ với đối tác quốc tế.
+          </p>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center text-primary mt-1">✓</div>
+              <div><strong class="text-dark">Nâng tầm thương hiệu:</strong> Xe điện sang trọng, hiện đại phù hợp đón
+                khách VIP, chuyên gia.</div>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center text-primary mt-1">✓</div>
+              <div><strong class="text-dark">Giảm phát thải:</strong> Báo cáo cắt giảm carbon thực tế cho các hợp đồng
+                FDI.</div>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center text-primary mt-1">✓</div>
+              <div><strong class="text-dark">Tối ưu vận hành:</strong> Chi phí nhiên liệu bằng 0 giúp ổn định dòng tiền
+                doanh nghiệp.</div>
+            </li>
+          </ul>
+        </div>
+        <div class="relative" data-aos="fade-left">
+          <div class="absolute -inset-4 bg-primary/10 rounded-full blur-3xl opacity-50"></div>
+          <img src="/images/gallery/silver-side.jpg" alt="Giải pháp vận tải xanh cho doanh nghiệp"
+            class="relative rounded-3xl shadow-2xl border-8 border-white">
+          <div class="absolute -bottom-6 -right-6 bg-dark p-6 rounded-2xl shadow-xl text-white">
+            <div class="text-primary font-black text-3xl">70%</div>
+            <div class="text-[10px] uppercase tracking-wider text-gray-500">Giảm Chi Phí Vận Hành</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-20 px-4 bg-gray-50" id="mo-hinh-kinh-doanh">
+    <div class="max-w-7xl mx-auto">
+      <div data-aos="fade-up" class="text-center mb-14">
+        <span class="text-primary font-semibold text-sm uppercase tracking-widest">Xe Biển Trắng — Kinh Doanh Gì?</span>
+        <h2 class="text-3xl md:text-4xl font-black text-dark mt-2">
+          4 Mô Hình Kinh Doanh<br>Hiệu Quả Với Limo Green
+        </h2>
+        <p class="text-gray-500 mt-3 max-w-xl mx-auto">
+          Xe biển trắng <strong>không chạy app Grab/Be</strong> được — nhưng đó không phải điểm yếu.
+          Bạn tự chủ lịch trình, tự định giá, <strong>không bị app tính hoa hồng 20-25%</strong>.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- Model 1: School pickup -->
+        <div class="biz-card rounded-2xl p-6 card-hover" data-aos="fade-up" data-aos-delay="0">
+          <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-3xl mb-4">🎒</div>
+          <h3 class="font-black text-lg text-dark mb-2">Đưa Đón Học Sinh</h3>
+          <p class="text-gray-600 text-sm mb-3">Ký hợp đồng với 2-3 nhóm phụ huynh cùng khu vực. 7 chỗ rộng rãi, điều
+            hòa mát, phụ huynh an tâm giao con.</p>
+          <div class="bg-yellow-50 border border-yellow-200 rounded-lg px-3 py-2 mb-3 flex items-center gap-2">
+            <span class="text-lg">⛽</span>
+            <span class="text-xs font-bold text-yellow-700">Chi phí nhiên liệu: <span
+                class="text-green-600 text-sm">0đ</span> — toàn bộ doanh thu là lợi nhuận</span>
+          </div>
+          <div class="bg-blue-50 rounded-xl p-3 mb-3">
+            <div class="text-xs text-blue-600 font-semibold mb-1">💰 Thu nhập thực tế/tháng:</div>
+            <div class="text-sm text-gray-700">Sáng: 6 HS × 3tr = <strong class="text-blue-700">18,000,000đ</strong>
+            </div>
+            <div class="text-sm text-gray-700">Chiều: 6 HS × 2tr = <strong class="text-blue-700">12,000,000đ</strong>
+            </div>
+            <div class="text-sm text-gray-700">Cuối tuần chạy thêm: <strong class="text-blue-700">+8,000,000đ</strong>
+            </div>
+          </div>
+          <div class="revenue-badge text-white text-sm font-bold px-3 py-1.5 rounded-lg text-center">
+            ~38,000,000đ/tháng
+          </div>
+          <div class="mt-2 text-center">
+            <div class="text-xs text-primary font-bold">Lãi ròng: ~14tr/tháng ✓</div>
+          </div>
+        </div>
+
+        <!-- Model 2: Corporate shuttle -->
+        <div class="biz-card rounded-2xl p-6 card-hover" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center text-3xl mb-4">🏢</div>
+          <h3 class="font-black text-lg text-dark mb-2">Hợp Đồng Doanh Nghiệp</h3>
+          <p class="text-gray-600 text-sm mb-3">Ký hợp đồng đưa đón nhân viên cho 1-2 công ty. Thu nhập cố định, ổn định
+            dài hạn.</p>
+          <div class="bg-yellow-50 border border-yellow-200 rounded-lg px-3 py-2 mb-3 flex items-center gap-2">
+            <span class="text-lg">⛽</span>
+            <span class="text-xs font-bold text-yellow-700">Chi phí nhiên liệu: <span
+                class="text-green-600 text-sm">0đ</span> — chạy bao nhiêu cũng không mất xăng</span>
+          </div>
+          <div class="bg-green-50 rounded-xl p-3 mb-3">
+            <div class="text-xs text-green-600 font-semibold mb-1">💰 Thu nhập thực tế/tháng:</div>
+            <div class="text-sm text-gray-700">HĐ đưa đón NV: <strong class="text-green-700">35,000,000đ</strong></div>
+            <div class="text-sm text-gray-700">Chạy thêm sáng sớm/tối: <strong
+                class="text-green-700">+10,000,000đ</strong></div>
+            <div class="text-xs text-gray-500 mt-1">* Tùy số km, giờ/ngày theo HĐ</div>
+          </div>
+          <div class="revenue-badge text-white text-sm font-bold px-3 py-1.5 rounded-lg text-center">
+            ~45,000,000đ/tháng
+          </div>
+          <div class="mt-2 text-center">
+            <div class="text-xs text-primary font-bold">Lãi ròng: ~21tr/tháng ✓</div>
+          </div>
+        </div>
+
+        <!-- Model 3: Airport & tourism -->
+        <div class="biz-card rounded-2xl p-6 card-hover" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center text-3xl mb-4">✈️</div>
+          <h3 class="font-black text-lg text-dark mb-2">Sân Bay & Du Lịch</h3>
+          <p class="text-gray-600 text-sm mb-3">Đặt qua Zalo/điện thoại trực tiếp. Không qua app = không mất hoa hồng
+            25%. Xe sang → giá cao hơn.</p>
+          <div class="bg-yellow-50 border border-yellow-200 rounded-lg px-3 py-2 mb-3 flex items-center gap-2">
+            <span class="text-lg">⛽</span>
+            <span class="text-xs font-bold text-yellow-700">Chi phí nhiên liệu: <span
+                class="text-green-600 text-sm">0đ</span> — chạy 100km hay 500km đều 0đ</span>
+          </div>
+          <div class="bg-purple-50 rounded-xl p-3 mb-3">
+            <div class="text-xs text-purple-600 font-semibold mb-1">💰 Thu nhập thực tế/tháng:</div>
+            <div class="text-sm text-gray-700">Nội Bài: 4 chuyến/ngày × 500k</div>
+            <div class="text-sm text-gray-700">25 ngày = <strong class="text-purple-700">50,000,000đ</strong></div>
+            <div class="text-sm font-bold text-primary">Xăng dầu: 0đ ⚡ Hoa hồng app: 0đ</div>
+          </div>
+          <div class="revenue-badge text-white text-sm font-bold px-3 py-1.5 rounded-lg text-center">
+            ~50,000,000đ/tháng
+          </div>
+          <div class="mt-2 text-center">
+            <div class="text-xs text-primary font-bold">Lãi ròng: ~28tr/tháng ✓</div>
+          </div>
+        </div>
+
+        <!-- Model 4: Events & wedding -->
+        <div class="biz-card rounded-2xl p-6 card-hover" data-aos="fade-up" data-aos-delay="300">
+          <div class="w-14 h-14 bg-rose-100 rounded-2xl flex items-center justify-center text-3xl mb-4">💐</div>
+          <h3 class="font-black text-lg text-dark mb-2">Đám Cưới & Sự Kiện</h3>
+          <p class="text-gray-600 text-sm mb-3">Xe điện sang trọng phù hợp đám cưới, hội nghị, tiếp đón VIP. Cuối tuần
+            nhu cầu cực cao.</p>
+          <div class="bg-yellow-50 border border-yellow-200 rounded-lg px-3 py-2 mb-3 flex items-center gap-2">
+            <span class="text-lg">⛽</span>
+            <span class="text-xs font-bold text-yellow-700">Chi phí nhiên liệu: <span
+                class="text-green-600 text-sm">0đ</span> — lợi nhuận cao hơn hẳn xe xăng</span>
+          </div>
+          <div class="bg-rose-50 rounded-xl p-3 mb-3">
+            <div class="text-xs text-rose-600 font-semibold mb-1">💰 Thu nhập thực tế/tháng:</div>
+            <div class="text-sm text-gray-700">8 lễ cưới/tháng × 4tr = <strong
+                class="text-rose-700">32,000,000đ</strong></div>
+            <div class="text-sm text-gray-700">Ngày thường chạy SB: <strong class="text-rose-700">+20,000,000đ</strong>
+            </div>
+            <div class="text-xs text-gray-500 mt-1">* Kết hợp linh hoạt các mô hình</div>
+          </div>
+          <div class="revenue-badge text-white text-sm font-bold px-3 py-1.5 rounded-lg text-center">
+            ~52,000,000đ/tháng
+          </div>
+          <div class="mt-2 text-center">
+            <div class="text-xs text-primary font-bold">Lãi ròng: ~28tr/tháng ✓</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Why no app commission -->
+      <div class="mt-10 bg-dark rounded-2xl p-7 text-white" data-aos="fade-up">
+        <h3 class="font-black text-xl mb-4 text-center">
+          💡 Tại Sao <span class="text-primary">Không Chạy App</span> Lại Tốt Hơn?
+        </h3>
+        <div class="grid sm:grid-cols-3 gap-4">
+          <div class="text-center">
+            <div class="text-4xl font-black text-red-400 mb-1">25%</div>
+            <div class="text-sm text-white/70">Grab/Be tính hoa hồng mỗi chuyến</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-black text-primary mb-1">0%</div>
+            <div class="text-sm text-white/70">Hoa hồng khi chạy hợp đồng trực tiếp</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-black text-gold mb-1">100%</div>
+            <div class="text-sm text-white/70">Doanh thu về tay bạn, tự định giá</div>
+          </div>
+        </div>
+        <p class="text-white/60 text-sm text-center mt-4">
+          Với 50 triệu doanh thu/tháng, chạy Grab mất 12.5tr hoa hồng. Chạy hợp đồng trực tiếp: giữ lại toàn bộ, lãi
+          ròng 26tr+/tháng.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="py-20 px-4 bg-white" id="gia-thue">
+    <div class="max-w-5xl mx-auto">
+      <div data-aos="fade-up" class="text-center mb-12">
+        <span class="text-primary font-semibold text-sm uppercase tracking-widest">Giá Thuê</span>
+        <h2 class="text-3xl md:text-4xl font-black text-dark mt-2">
+          Hợp Đồng Rõ Ràng<br>Không Phí Ẩn
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+
+        <!-- 1-3 year contract -->
+        <div class="border-2 border-gray-200 rounded-2xl p-7 card-hover relative" data-aos="fade-up" data-aos-delay="0">
+          <div
+            class="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-500 text-white text-xs font-bold px-4 py-1 rounded-full whitespace-nowrap z-10">
+            🎯 Giảm 5% giá thuê
+          </div>
+          <div class="text-center mb-6 pt-2">
+            <div class="text-sm font-bold text-gray-500 uppercase tracking-wide mb-2">Hợp Đồng</div>
+            <div class="text-5xl font-black text-primary">1-3 Năm</div>
+            <div class="text-gray-500 text-sm mt-1">12-36 tháng · Linh hoạt</div>
+          </div>
+          <div class="border-t border-gray-100 pt-5">
+            <div class="text-center mb-4">
+              <div class="flex items-center justify-center gap-2">
+                <span class="text-lg text-gray-400 line-through">24tr</span>
+                <span class="text-4xl font-black text-dark">22.8tr</span>
+              </div>
+              <div class="text-gray-500">/tháng</div>
+              <div class="inline-block bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full mt-2">Tiết
+                kiệm 1.2tr/tháng</div>
+            </div>
+            <ul class="space-y-2.5 text-sm">
+              <li class="flex items-start gap-2.5">
+                <span class="text-primary font-bold mt-0.5">✓</span>
+                <span class="text-gray-700">Sạc điện miễn phí V-Green đến 30/6/2027</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-primary font-bold mt-0.5">✓</span>
+                <span class="text-gray-700">Bảo hiểm dân sự bắt buộc đã có</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-primary font-bold mt-0.5">✓</span>
+                <span class="text-gray-700">Đăng kiểm định kỳ theo thỏa thuận</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-primary font-bold mt-0.5">✓</span>
+                <span class="text-gray-700">Thanh toán đầu tháng, linh hoạt</span>
+              </li>
+            </ul>
+            <a href="#lien-he"
+              class="block mt-6 text-center border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold py-3 rounded-xl transition-all">
+              Đăng Ký Gói 1-3 Năm
+            </a>
+          </div>
+        </div>
+
+        <!-- 3-5 year contract (featured) -->
+        <div class="price-featured rounded-2xl p-7 pt-10 card-hover" data-aos="fade-up" data-aos-delay="100">
+          <div
+            class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gold text-dark text-xs font-black px-4 py-1.5 rounded-full whitespace-nowrap z-10">
+            🔥 GIẢM 10% — Phổ Biến Nhất
+          </div>
+          <div class="text-center mb-6">
+            <div class="text-sm font-bold text-gray-400 uppercase tracking-wide mb-2">Hợp Đồng</div>
+            <div class="text-5xl font-black text-gold">3-5 Năm</div>
+            <div class="text-gray-400 text-sm mt-1">36-60 tháng · Tối ưu nhất</div>
+          </div>
+          <div class="border-t border-white/10 pt-5">
+            <div class="text-center mb-4">
+              <div class="flex items-center justify-center gap-2">
+                <span class="text-lg text-gray-500 line-through">24tr</span>
+                <span class="text-4xl font-black text-white">21.6tr</span>
+              </div>
+              <div class="text-gray-400">/tháng</div>
+              <div class="inline-block bg-yellow-400/20 text-yellow-300 text-xs font-bold px-3 py-1 rounded-full mt-2">
+                🔥 Tiết kiệm 2.4tr/tháng</div>
+            </div>
+            <div class="bg-primary/20 rounded-xl p-3 mb-4 text-center">
+              <div class="text-green-300 text-xs font-bold">💰 Tổng tiết kiệm xăng 5 năm</div>
+              <div class="text-white font-black text-xl mt-0.5">≥ 420,000,000đ</div>
+              <div class="text-gray-400 text-xs">so với xe xăng tương đương</div>
+            </div>
+            <ul class="space-y-2.5 text-sm">
+              <li class="flex items-start gap-2.5">
+                <span class="text-primary font-bold mt-0.5">✓</span>
+                <span class="text-gray-300">Sạc điện miễn phí V-Green đến 30/6/2027</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-primary font-bold mt-0.5">✓</span>
+                <span class="text-gray-300">Bảo hiểm dân sự bắt buộc đã có</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-primary font-bold mt-0.5">✓</span>
+                <span class="text-gray-300">Ổn định 3-5 năm — xây khách hàng lâu dài</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-primary font-bold mt-0.5">✓</span>
+                <span class="text-gray-300">Không lo tìm xe mới mỗi năm</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-gold font-bold mt-0.5">★</span>
+                <span class="text-gold font-semibold">Ưu tiên gia hạn sau khi hết HĐ</span>
+              </li>
+            </ul>
+            <a href="#lien-he"
+              class="block mt-6 text-center bg-primary hover:bg-primary-dark text-white font-bold py-3 rounded-xl transition-all">
+              Đăng Ký Gói 3-5 Năm →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Notes -->
+      <div class="mt-8 bg-gray-50 rounded-2xl p-6 text-sm text-gray-600 max-w-3xl mx-auto" data-aos="fade-up">
+        <div class="font-bold text-dark mb-2">📋 Điều kiện & lưu ý:</div>
+        <ul class="space-y-1.5">
+          <li>• Hợp đồng ký kết rõ ràng theo quy định pháp luật Việt Nam</li>
+          <li>• Người thuê cần có bằng lái xe hợp lệ (B2 trở lên)</li>
+          <li>• Đặt cọc theo thỏa thuận, được hoàn trả khi kết thúc hợp đồng</li>
+          <li>• Chi phí sửa chữa do tai nạn: người thuê chịu trách nhiệm theo hợp đồng</li>
+          <li>• Đăng kiểm, thuế đường bộ: chủ xe lo</li>
+          <li>• Bảo hiểm vật chất thân xe: thỏa thuận trong hợp đồng</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="py-16 px-4 bg-gradient-to-br from-gray-900 via-dark to-gray-900">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div data-aos="fade-right">
+          <span class="text-gold font-semibold text-sm uppercase tracking-widest">Lợi Thế Độc Quyền 2026</span>
+          <h2 class="text-3xl md:text-4xl font-black text-white mt-3 mb-4">
+            Sạc Điện<br>
+            <span class="text-primary">Hoàn Toàn<br>Miễn Phí</span>
+          </h2>
+          <p class="text-gray-400 text-base mb-6">
+            VinFast đang áp dụng ưu đãi sạc điện miễn phí tại toàn bộ hệ thống trạm sạc V-Green trên toàn quốc.
+            Đây là cơ hội hiếm có để vận hành xe hoàn toàn <strong class="text-white">0 đồng chi phí nhiên
+              liệu</strong>.
+          </p>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-primary/20 rounded-xl flex items-center justify-center text-xl flex-shrink-0">⚡
+              </div>
+              <div>
+                <div class="text-white font-semibold text-sm">2,221+ trạm sạc V-Green</div>
+                <div class="text-gray-500 text-xs">150,000+ cổng sạc, phủ 34 tỉnh thành</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-gold/20 rounded-xl flex items-center justify-center text-xl flex-shrink-0">⏱️
+              </div>
+              <div>
+                <div class="text-white font-semibold text-sm">30 phút sạc nhanh DC (10→70%)</div>
+                <div class="text-gray-500 text-xs">Đủ cho 300+ km di chuyển tiếp theo</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-blue-500/20 rounded-xl flex items-center justify-center text-xl flex-shrink-0">
+                🗺️</div>
+              <div>
+                <div class="text-white font-semibold text-sm">Phạm vi 450km mỗi lần sạc</div>
+                <div class="text-gray-500 text-xs">Hà Nội → Hải Phòng → Quảng Ninh chỉ 1 lần sạc</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-aos="fade-left">
+          <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-7">
+            <div class="text-center mb-6">
+              <div class="text-sm text-gray-400 mb-1">Tiết kiệm tiền điện trong hợp đồng</div>
+              <div class="text-gold font-black text-5xl">420tr+</div>
+              <div class="text-gray-500 text-sm">với hợp đồng 5 năm (so với xăng)</div>
+            </div>
+            <div class="space-y-4">
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span class="text-gray-400">Xe xăng: 7tr/tháng × 60 tháng</span>
+                  <span class="text-red-400 font-bold">420,000,000đ</span>
+                </div>
+                <div class="h-3 bg-gray-700 rounded-full overflow-hidden">
+                  <div class="cost-bar h-full w-full rounded-full"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span class="text-gray-400">Limo Green: 0đ đến 6/2027 + rẻ sau đó</span>
+                  <span class="text-primary font-bold">~0-30,000,000đ</span>
+                </div>
+                <div class="h-3 bg-gray-700 rounded-full overflow-hidden">
+                  <div class="savings-bar h-full w-[7%] rounded-full"></div>
+                </div>
+              </div>
+            </div>
+            <div class="mt-5 bg-primary/20 rounded-xl p-4 text-center">
+              <div class="text-primary font-black text-2xl">Tiết kiệm 390-420tr</div>
+              <div class="text-gray-400 text-xs mt-1">Tính đến hết hợp đồng 5 năm</div>
+            </div>
+            <div class="mt-3 text-center">
+              <div
+                class="text-yellow-400 text-xs font-semibold pulse-gold inline-block px-3 py-1 rounded-full bg-yellow-400/10">
+                ⚡ Ưu đãi sạc miễn phí: Còn đến 30/06/2027
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-20 px-4 bg-white" id="hinh-anh">
+    <div class="max-w-7xl mx-auto">
+      <div data-aos="fade-up" class="text-center mb-10">
+        <span class="text-primary font-semibold text-sm uppercase tracking-widest">Hình Ảnh Xe</span>
+        <h2 class="text-3xl md:text-4xl font-black text-dark mt-2">VinFast Limo Green · Màu Bạc</h2>
+        <p class="text-gray-500 mt-2 text-sm">Xe mới 100% · Đăng ký 2026 · Sạch sẽ · Sang trọng</p>
+      </div>
+
+      <!-- Main Gallery Slider -->
+      <div class="swiper gallery-main rounded-3xl overflow-hidden mb-6 aspect-video" data-aos="fade-up">
+        <div class="swiper-wrapper">
+          <!-- Slide 1: Silver Front -->
+          <div class="swiper-slide relative">
+            <img src="/images/gallery/silver-1.jpg" class="w-full h-full object-cover"
+              alt="Thuê xe tự lái VinFast Limo Green màu bạc sang trọng">
+            <div class="absolute bottom-4 left-4 bg-black/60 text-white text-xs px-3 py-1 rounded-full">Ngoại thất ·
+              Sang trọng</div>
+          </div>
+          <!-- Slide 2: Silver Side -->
+          <div class="swiper-slide relative">
+            <img src="/images/gallery/silver-side.jpg" class="w-full h-full object-cover"
+              alt="Thuê xe 7 chỗ tự lái VinFast Limo Green màu bạc thực tế">
+            <div class="absolute bottom-4 left-4 bg-black/60 text-white text-xs px-3 py-1 rounded-full">Ngoại thất · Màu
+              Bạc</div>
+          </div>
+          <!-- Slide 3: Interior Trunk -->
+          <div class="swiper-slide relative">
+            <img src="/images/gallery/interior-passenger.jpg" class="w-full h-full object-cover"
+              alt="Nội thất thuê xe điện tự lái VinFast Limo Green khoang hành khách">
+            <div class="absolute bottom-4 left-4 bg-black/60 text-white text-xs px-3 py-1 rounded-full">Nội thất ·
+              Khoang hành khách cực rộng</div>
+          </div>
+          <!-- Slide 4: Interior Cockpit -->
+          <div class="swiper-slide relative">
+            <img src="/images/gallery/interior-cockpit.jpg" class="w-full h-full object-cover"
+              alt="Khoang lái hiện đại khi thuê VinFast Limo Green">
+            <div class="absolute bottom-4 left-4 bg-black/60 text-white text-xs px-3 py-1 rounded-full">Nội thất ·
+              Khoang lái hiện đại</div>
+          </div>
+          <!-- Slide 5: Yellow Exterior -->
+          <div class="swiper-slide relative">
+            <img src="/images/gallery/yellow-exterior.jpg" class="w-full h-full object-cover"
+              alt="Xe VinFast Limo Green màu vàng cho thuê tự lái">
+            <div class="absolute bottom-4 left-4 bg-black/60 text-white text-xs px-3 py-1 rounded-full">Ngoại thất · Màu
+              Vàng</div>
+          </div>
+          <!-- Slide 6: Red Exterior -->
+          <div class="swiper-slide relative">
+            <img src="/images/gallery/red-exterior.jpg" class="w-full h-full object-cover"
+              alt="Thuê xe điện tự lái VinFast Limo Green màu đỏ">
+            <div class="absolute bottom-4 left-4 bg-black/60 text-white text-xs px-3 py-1 rounded-full">Ngoại thất · Màu
+              Đỏ</div>
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+
+      <!-- Thumbnail Slider -->
+      <div class="swiper gallery-thumbs" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="/images/gallery/silver-1.jpg" alt="Ngoại thất bạc">
+          </div>
+          <div class="swiper-slide">
+            <img src="/images/gallery/silver-side.jpg" alt="Ngoại thất hông">
+          </div>
+          <div class="swiper-slide">
+            <img src="/images/gallery/interior-passenger.jpg" alt="Khoang hành khách">
+          </div>
+          <div class="swiper-slide">
+            <img src="/images/gallery/interior-cockpit.jpg" alt="Khoang lái">
+          </div>
+          <div class="swiper-slide">
+            <img src="/images/gallery/yellow-exterior.jpg" alt="Ngoại thất vàng">
+          </div>
+          <div class="swiper-slide">
+            <img src="/images/gallery/red-exterior.jpg" alt="Ngoại thất đỏ">
+          </div>
+        </div>
+      </div>
+
+      <!-- Specs grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10" data-aos="fade-up">
+        <div class="text-center p-4 bg-gray-50 rounded-2xl">
+          <div class="text-3xl font-black text-primary">7</div>
+          <div class="text-sm text-gray-600 mt-1">Chỗ ngồi</div>
+        </div>
+        <div class="text-center p-4 bg-gray-50 rounded-2xl">
+          <div class="text-3xl font-black text-primary">450km</div>
+          <div class="text-sm text-gray-600 mt-1">Mỗi lần sạc</div>
+        </div>
+        <div class="text-center p-4 bg-gray-50 rounded-2xl">
+          <div class="text-3xl font-black text-primary">607L</div>
+          <div class="text-sm text-gray-600 mt-1">Cốp xe (gập hàng 3)</div>
+        </div>
+        <div class="text-center p-4 bg-gray-50 rounded-2xl">
+          <div class="text-3xl font-black text-primary">30'</div>
+          <div class="text-sm text-gray-600 mt-1">Sạc nhanh 10→70%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-16 px-4 bg-gray-50" id="quy-trinh">
+    <div class="max-w-5xl mx-auto">
+      <div data-aos="fade-up" class="text-center mb-12">
+        <h2 class="text-3xl font-black text-dark">Quy Trình Thuê Xe Đơn Giản</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="text-center" data-aos="fade-up" data-aos-delay="0">
+          <div
+            class="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center text-white font-black text-2xl mx-auto mb-4">
+            1</div>
+          <h3 class="font-bold text-lg text-dark mb-2">Liên Hệ & Trao Đổi</h3>
+          <p class="text-gray-600 text-sm">Gọi điện hoặc nhắn Zalo để trao đổi về nhu cầu, mục đích sử dụng xe và thời
+            hạn hợp đồng.</p>
+        </div>
+        <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+          <div
+            class="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center text-white font-black text-2xl mx-auto mb-4">
+            2</div>
+          <h3 class="font-bold text-lg text-dark mb-2">Ký Hợp Đồng & Đặt Cọc</h3>
+          <p class="text-gray-600 text-sm">Xem xe thực tế, ký hợp đồng rõ ràng có công chứng, đặt cọc theo thỏa thuận
+            hai bên.</p>
+        </div>
+        <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+          <div
+            class="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center text-white font-black text-2xl mx-auto mb-4">
+            3</div>
+          <h3 class="font-bold text-lg text-dark mb-2">Nhận Xe & Bắt Đầu</h3>
+          <p class="text-gray-600 text-sm">Nhận xe đầy đủ giấy tờ, hướng dẫn sạc điện tại trạm V-Green gần nhất và bắt
+            đầu kinh doanh.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+     BLOG - BÀI VIẾT MỚI NHẤT
+     ============================ -->
+  <section class="py-20 px-4 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <div data-aos="fade-up" class="text-center mb-14">
+        <span class="text-primary font-semibold text-sm uppercase tracking-widest">Kiến Thức</span>
+        <h2 class="text-3xl md:text-4xl font-black text-dark mt-2">Bài Viết Mới Nhất</h2>
+        <p class="text-gray-500 mt-3">Chia sẻ kinh nghiệm kinh doanh vận tải xe điện</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {posts.map((post) => (
+          <a href={`/blog/${post.slug}/`} class="bg-white rounded-2xl overflow-hidden card-hover border border-gray-100 group" data-aos="fade-up">
+            {post.data.image && (
+              <div class="aspect-video overflow-hidden">
+                <img src={post.data.image} alt={post.data.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              </div>
+            )}
+            <div class="p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-xs text-primary font-semibold">{new Date(post.data.publishDate).toLocaleDateString('vi-VN')}</span>
+                {post.data.tags && post.data.tags.slice(0,2).map((tag: string) => (
+                  <span class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">{tag}</span>
+                ))}
+              </div>
+              <h3 class="font-black text-dark text-lg mb-2 group-hover:text-primary transition-colors leading-snug">{post.data.title}</h3>
+              <p class="text-gray-500 text-sm line-clamp-3">{post.data.description}</p>
+              <div class="mt-4 text-primary font-semibold text-sm">Đọc tiếp →</div>
+            </div>
+          </a>
+        ))}
+      </div>
+      <div class="text-center mt-10">
+        <a href="/blog/" class="inline-flex items-center gap-2 bg-dark text-white font-bold px-8 py-4 rounded-xl hover:bg-gray-800 transition-colors">Xem Tất Cả Bài Viết →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4 bg-white" id="hoi-dap">
+    <div class="max-w-3xl mx-auto">
+      <div data-aos="fade-up" class="text-center mb-12">
+        <h2 class="text-3xl font-black text-dark">Câu Hỏi Thường Gặp</h2>
+        <p class="text-gray-500 mt-2">Giải đáp các thắc mắc về quyền lợi và trách nhiệm</p>
+      </div>
+      <div class="space-y-3" data-aos="fade-up">
+
+        <!-- FAQ items -->
+        <div class="faq-item border border-gray-200 rounded-2xl">
+          <button
+            class="w-full text-left px-6 py-5 flex items-center justify-between font-semibold text-dark hover:bg-gray-50 transition-colors faq-trigger">
+            <span>Chi phí bảo trì, bảo dưỡng định kỳ ai chịu trách nhiệm?</span>
+            <span class="faq-icon text-primary text-2xl font-light ml-4 flex-shrink-0">+</span>
+          </button>
+          <div class="faq-answer px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+            Xe được bảo dưỡng định kỳ theo tiêu chuẩn hãng. Tuy nhiên, người thuê có <strong>trách nhiệm bắt
+              buộc</strong> đưa xe đi bảo dưỡng đúng lịch của VinFast (mỗi 5.000km hoặc 6 tháng). Nếu người thuê chậm
+            trễ dẫn đến mất bảo hành hoặc phát sinh lỗi kỹ thuật, người thuê chịu trách nhiệm bồi thường 100% thiệt hại.
+          </div>
+        </div>
+
+        <div class="faq-item border border-gray-200 rounded-2xl">
+          <button
+            class="w-full text-left px-6 py-5 flex items-center justify-between font-semibold text-dark hover:bg-gray-50 transition-colors faq-trigger">
+            <span>Nếu xe bị hỏng hóc hoặc gặp sự cố kỹ thuật thì xử lý thế nào?</span>
+            <span class="faq-icon text-primary text-2xl font-light ml-4 flex-shrink-0">+</span>
+          </button>
+          <div class="faq-answer px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+            Các lỗi kỹ thuật nằm trong danh mục bảo hành của VinFast sẽ được hãng xử lý miễn phí. Trong thời gian xe nằm
+            xưởng bảo hành, các bên sẽ thỏa thuận về việc giảm trừ tiền thuê. Tuy nhiên, các hư hại do cách vận hành sai
+            (lội nước hỏng pin, sạc sai cách, hỏng nội thất, va chạm...) <strong>người thuê hoàn toàn chịu trách nhiệm
+              chi phí sửa chữa</strong>.
+          </div>
+        </div>
+
+        <div class="faq-item border border-gray-200 rounded-2xl">
+          <button
+            class="w-full text-left px-6 py-5 flex items-center justify-between font-semibold text-dark hover:bg-gray-50 transition-colors faq-trigger">
+            <span>Bảo hiểm xe được quy định như thế nào?</span>
+            <span class="faq-icon text-primary text-2xl font-light ml-4 flex-shrink-0">+</span>
+          </button>
+          <div class="faq-answer px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+            Xe đã có bảo hiểm trách nhiệm dân sự. Người thuê có trách nhiệm tự mua thêm (hoặc thanh toán phí)
+            <strong>Bảo hiểm vật chất thân xe (loại hình kinh doanh vận tải)</strong> trong suốt thời hạn hợp đồng. Khi
+            xảy ra va chạm, người thuê phải giữ nguyên hiện trường, thông báo ngay cho chủ xe và đơn vị bảo hiểm để làm
+            thủ tục.
+          </div>
+        </div>
+
+        <div class="faq-item border border-gray-200 rounded-2xl">
+          <button
+            class="w-full text-left px-6 py-5 flex items-center justify-between font-semibold text-dark hover:bg-gray-50 transition-colors faq-trigger">
+            <span>Mỗi tháng tôi được chạy tối đa bao nhiêu km?</span>
+            <span class="faq-icon text-primary text-2xl font-light ml-4 flex-shrink-0">+</span>
+          </button>
+          <div class="faq-answer px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+            Để đảm bảo giá trị xe, chúng tôi áp dụng định mức <strong>3,500km/tháng</strong>. Nếu chạy vượt định mức,
+            phí phụ trội là 3.000đ/km. Điều này giúp xe không bị khấu hao quá nhanh và đảm bảo lịch bảo dưỡng ổn định,
+            an toàn cho cả người lái và phương tiện.
+          </div>
+        </div>
+
+        <div class="faq-item border border-gray-200 rounded-2xl">
+          <button
+            class="w-full text-left px-6 py-5 flex items-center justify-between font-semibold text-dark hover:bg-gray-50 transition-colors faq-trigger">
+            <span>Tôi có được cho người khác mượn hoặc thuê lại xe không?</span>
+            <span class="faq-icon text-primary text-2xl font-light ml-4 flex-shrink-0">+</span>
+          </button>
+          <div class="faq-answer px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+            Tuyệt đối KHÔNG. Hợp đồng chỉ ký cho người thuê trực tiếp sử dụng. Việc cho thuê lại hoặc sử dụng xe vào mục
+            đích phi pháp, cầm cố/thế chấp là vi phạm nghiêm trọng. Trong trường hợp này, chúng tôi có quyền <strong>thu
+              hồi xe ngay lập tức</strong> mà không hoàn lại tiền cọc.
+          </div>
+        </div>
+
+        <div class="faq-item border border-gray-200 rounded-2xl">
+          <button
+            class="w-full text-left px-6 py-5 flex items-center justify-between font-semibold text-dark hover:bg-gray-50 transition-colors faq-trigger">
+            <span>Ai chịu trách nhiệm về các vi phạm giao thông (Phạt nguội)?</span>
+            <span class="faq-icon text-primary text-2xl font-light ml-4 flex-shrink-0">+</span>
+          </button>
+          <div class="faq-answer px-6 pb-5 text-gray-600 text-sm leading-relaxed">
+            Người thuê chịu trách nhiệm 100% các biên bản vi phạm giao thông phát sinh trong thời gian thuê. Bao gồm cả
+            các thông báo phạt nguội gửi về sau khi đã trả xe (dựa trên nhật ký hành trình thực tế của phương tiện).
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <section class="py-20 px-4 bg-gradient-to-br from-gray-50 to-primary-light" id="lien-he">
+    <div class="max-w-6xl mx-auto">
+      <div data-aos="fade-up" class="text-center mb-12">
+        <span class="text-primary font-semibold text-sm uppercase tracking-widest">Liên Hệ Ngay</span>
+        <h2 class="text-3xl md:text-4xl font-black text-dark mt-2">Đăng Ký Thuê Xe</h2>
+        <p class="text-gray-500 mt-2">Phản hồi trong vòng 5 phút qua Zalo</p>
+      </div>
+
+      <div class="grid lg:grid-cols-5 gap-8">
+
+        <!-- Contact info -->
+        <div class="lg:col-span-2 space-y-5" data-aos="fade-right">
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
+                <svg width="22" height="22" fill="white" viewBox="0 0 24 24">
+                  <path
+                    d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
+                </svg>
+              </div>
+              <div>
+                <div class="text-xs text-gray-500 font-medium">Gọi điện</div>
+                <a href="tel:0979121097"
+                  class="text-xl font-black text-dark hover:text-primary transition-colors">0979.121.097</a>
+              </div>
+            </div>
+            <a href="tel:0979121097"
+              class="block w-full bg-primary hover:bg-primary-dark text-white font-bold text-center py-3 rounded-xl transition-all">
+              📞 Gọi Ngay
+            </a>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="w-12 h-12 bg-zalo rounded-xl flex items-center justify-center">
+                <svg width="22" height="22" viewBox="0 0 40 40" fill="white">
+                  <path
+                    d="M20 0C9 0 0 8.95 0 20c0 4.25 1.35 8.2 3.65 11.45L1.2 38.6a1 1 0 001.25 1.2l7.4-2.5C12.8 38.7 16.3 40 20 40c11.05 0 20-8.95 20-20S31.05 0 20 0z" />
+                </svg>
+              </div>
+              <div>
+                <div class="text-xs text-gray-500 font-medium">Zalo</div>
+                <div class="text-xl font-black text-dark">0979.121.097</div>
+              </div>
+            </div>
+            <a href="https://zalo.me/0979121097" target="_blank" rel="noopener"
+              class="block w-full bg-zalo hover:opacity-90 text-white font-bold text-center py-3 rounded-xl transition-all">
+              💬 Nhắn Zalo
+            </a>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+            <div class="text-sm font-bold text-dark mb-3">📍 Khu vực hoạt động</div>
+            <div class="text-gray-600 text-sm space-y-1">
+              <div>✓ Hà Nội & vùng lân cận</div>
+              <div>✓ Hải Phòng, Quảng Ninh</div>
+              <div>✓ Các tuyến liên tỉnh phía Bắc</div>
+            </div>
+            <div class="mt-3 text-xs text-gray-400">Liên hệ để xác nhận khu vực cụ thể</div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="lg:col-span-3" data-aos="fade-left">
+          <div class="bg-white rounded-2xl p-7 shadow-sm border border-gray-100">
+            <h3 class="font-bold text-dark text-lg mb-5">Điền thông tin, chúng tôi liên hệ lại ngay</h3>
+
+            <form 
+              action="https://docs.google.com/forms/d/e/1FAIpQLScO2v0bJVu4AGyLfXR-ftIB6jcQ_tpYwj2jo_V2PccmVzPtBw/formResponse"
+              method="POST" target="hidden_iframe" id="contactForm">
+              <div class="grid sm:grid-cols-2 gap-4 mb-4">
+                <div>
+                  <label class="block text-sm font-semibold text-gray-700 mb-1.5">Họ và tên *</label>
+                  <input type="text" name="entry.972743390" required placeholder="Nguyễn Văn A" class="form-input">
+                </div>
+                <div>
+                  <label class="block text-sm font-semibold text-gray-700 mb-1.5">Số điện thoại *</label>
+                  <input type="tel" name="entry.473353679" required placeholder="09xx.xxx.xxx" class="form-input">
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <label class="block text-sm font-semibold text-gray-700 mb-1.5">Email (Không bắt buộc)</label>
+                <input type="email" name="entry.1358962529" id="emailField" placeholder="abc@gmail.com"
+                  class="form-input">
+              </div>
+
+
+              <div class="grid sm:grid-cols-2 gap-4 mb-4">
+                <div>
+                  <label class="block text-sm font-semibold text-gray-700 mb-1.5">Dự kiến bắt đầu</label>
+                  <input type="date" name="entry.829499582" class="form-input">
+                </div>
+                <div>
+                  <label class="block text-sm font-semibold text-gray-700 mb-1.5">Thời hạn hợp đồng</label>
+                  <input type="text" name="entry.916584695" placeholder="VD: 3 năm / 5 năm" class="form-input">
+                </div>
+              </div>
+
+              <div class="mb-5">
+                <label class="block text-sm font-semibold text-gray-700 mb-1.5">Ghi chú / Mục đích sử dụng</label>
+                <textarea name="entry.964450740" rows="3"
+                  placeholder="VD: Tôi muốn dùng xe để đưa đón học sinh tại quận Đống Đa..."
+                  class="form-input resize-none"></textarea>
+              </div>
+
+              <button type="submit" id="submitBtn"
+                class="w-full bg-primary hover:bg-primary-dark text-white font-black text-base py-4 rounded-xl transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/30 flex items-center justify-center gap-2">
+                <span id="btnText">Gửi Đăng Ký Ngay →</span>
+                <span id="btnSpinner" class="hidden">
+                  <svg class="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                  </svg>
+                </span>
+              </button>
+              <p class="text-xs text-gray-400 text-center mt-3">
+                Thông tin của bạn được bảo mật. Chúng tôi sẽ liên hệ trong 5-10 phút.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Toast -->
+  <div id="toast" class="fixed bottom-24 right-4 z-50 bg-primary text-white rounded-2xl px-5 py-4 shadow-xl max-w-xs">
+    <div class="font-bold text-sm mb-0.5">✅ Đã gửi thành công!</div>
+    <div class="text-xs text-white/80">Chúng tôi sẽ liên hệ Zalo/điện thoại trong 5 phút.</div>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" is:inline></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" is:inline></script>
+  <script is:inline>
+    // AOS
+    AOS.init({ duration: 700, once: true, easing: 'ease-out-cubic' });
+
+    // Hero Swiper
+    new Swiper('.hero-swiper', { loop: true, effect: 'fade', fadeEffect: { crossFade: true }, autoplay: { delay: 5000, disableOnInteraction: false }, speed: 1000 });
+
+    // Gallery
+    var galleryThumbs = new Swiper('.gallery-thumbs', { spaceBetween: 10, slidesPerView: 4, freeMode: true, watchSlidesProgress: true, breakpoints: { 640: { slidesPerView: 5 }, 1024: { slidesPerView: 6 } } });
+    new Swiper('.gallery-main', { spaceBetween: 10, navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }, thumbs: { swiper: galleryThumbs } });
+
+    // FAQ
+    document.querySelectorAll('.faq-trigger').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = this.closest('.faq-item');
+        document.querySelectorAll('.faq-item').forEach(function(other) {
+          if (other !== item) other.classList.remove('open');
+        });
+        item.classList.toggle('open');
+      });
+    });
+
+    // Form
+    var formSubmitted = false;
+    var form = document.getElementById('contactForm') || document.getElementById('contactFormMain');
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        var btn = document.getElementById('submitBtn');
+        var btnText = document.getElementById('btnText');
+        var spinner = document.getElementById('btnSpinner');
+        var emailInput = document.getElementById('emailField');
+        if (emailInput && !emailInput.value) emailInput.value = 'khach-lien-he-zalo@gmail.com';
+        if (btnText) btnText.textContent = 'Đang gửi thông tin...';
+        if (spinner) spinner.classList.remove('hidden');
+        if (btn) { btn.disabled = true; btn.style.opacity = '0.7'; }
+        formSubmitted = true;
+      });
+    }
+
+    var hiddenIframe = document.getElementById('hidden_iframe');
+    if (hiddenIframe) {
+      hiddenIframe.onload = function() {
+        if (formSubmitted) {
+          var toast = document.getElementById('toast');
+          var btnText = document.getElementById('btnText');
+          var spinner = document.getElementById('btnSpinner');
+          var btn = document.getElementById('submitBtn');
+          if (toast) toast.classList.add('show');
+          setTimeout(function() { if (toast) toast.classList.remove('show'); }, 2500);
+          if (btnText) btnText.textContent = '✅ Gửi thành công!';
+          if (spinner) spinner.classList.add('hidden');
+          if (btn) btn.style.opacity = '1';
+          if (form) form.reset();
+          setTimeout(function() {
+            if (btnText) btnText.textContent = 'Gửi Đăng Ký Ngay →';
+            if (btn) btn.disabled = false;
+            window.location.href = 'https://zalo.me/0979121097';
+          }, 2000);
+          formSubmitted = false;
+        }
+      };
+    }
+  </script>
+</BaseLayout>

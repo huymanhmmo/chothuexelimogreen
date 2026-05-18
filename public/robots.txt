@@ -1,0 +1,33 @@
+# limogreen.chothuexe.vip - Robots.txt
+User-agent: *
+Allow: /
+Disallow: /.git/
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+Sitemap: https://limogreen.chothuexe.vip/sitemap.xml

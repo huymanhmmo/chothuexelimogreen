@@ -1,0 +1,40 @@
+---
+import SEOHead from '../components/SEOHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  image?: string;
+  type?: string;
+  publishDate?: string;
+  noindex?: boolean;
+  currentPath?: string;
+}
+
+const props = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <SEOHead
+    title={props.title}
+    description={props.description}
+    canonical={props.canonical}
+    image={props.image}
+    type={props.type}
+    publishDate={props.publishDate}
+    noindex={props.noindex}
+  />
+  <slot name="head" />
+</head>
+<body class="bg-white">
+  <Header currentPath={props.currentPath} />
+  <slot />
+  <Footer />
+</body>
+</html>
